@@ -1,0 +1,28 @@
+<div>
+	<form name="editForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">Edytuj tytuł książki</h3>
+		</div>
+		<div class="modal-body">
+			<form role="form">
+				<div class="row">
+					<div class="col-xs-8"
+						ng-class="{ 'has-error' : editForm.title.$invalid && !editForm.title.$pristine }">
+						<input type="text" class="form-control" name="title"
+							placeholder="Tytuł" ng-model="title" required />
+						<p ng-show="editForm.title.$invalid && !editForm.title.$pristine"
+							class="help-block">Tytuł jest wymagany!</p>
+					</div>
+					<div class="col-xs-4">
+						<button ng-disabled="editForm.$invalid" ng-click="edit(title)"
+							class="btn btn-default">Zapisz tytuł</button>
+					</div>
+				</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-warning" ng-click="$dismiss()">Zamknij okno</button>
+</div>
+</form>
+</div>

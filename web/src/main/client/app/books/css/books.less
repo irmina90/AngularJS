@@ -1,0 +1,52 @@
+@orange: #f0ad4e;
+@dark-orange: #eea236;
+@yellow: #fceedb;
+@light-yellow: #fdf6ed;
+section {
+	margin-top: 20px;
+}
+
+table , th , td {
+	border-collapse: separate;
+	line-height: 24px;
+	margin: 30px auto;
+	text-align: left;
+	th {
+		background-color: @orange;
+		border-color: @dark-orange;
+		color: white;
+		font-size: 16px;
+	}
+
+	tr {
+		&:nth-child(odd) {
+			background-color: @yellow;
+		}
+
+		&:nth-child(even) {
+			background-color: @light-yellow;
+		}
+
+		transition: background-color 1s ease;
+		&:hover {
+			background-color: @orange;
+		}
+	}
+}
+
+.label-author {
+	width: 100%;
+}
+
+.form-control.search {
+	display: inline-block;
+	width: auto;
+}
+
+.glyphicon {
+	font-size: 18px;
+	&:hover {
+		color: @orange;
+	}
+}
+

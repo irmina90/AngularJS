@@ -1,0 +1,35 @@
+<div>
+	<form name="authorForm" novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">Dodaj autora</h3>
+		</div>
+		<div class="modal-body">
+			<form role="form">
+				<div class="row">
+					<div class="col-xs-5"
+						ng-class="{ 'has-error' : authorForm.author_firstname.$invalid && !authorForm.author_firstname.$pristine }">
+						<input type="text" class="form-control" name="author_firstname"
+							placeholder="Imię" ng-model="author.firstName" required />
+						<p
+							ng-show="authorForm.author_firstname.$invalid && !authorForm.author_firstname.$pristine"
+							class="help-block">Imię jest wymagane!</p>
+					</div>
+					<div class="col-xs-5"
+						ng-class="{ 'has-error' : authorForm.author_lastname.$invalid && !authorForm.author_lastname.$pristine }">
+						<input type="text" class="form-control" name="author_lastname"
+							placeholder="Nazwisko" ng-model="author.lastName" required />
+						<p
+							ng-show="authorForm.author_lastname.$invalid && !authorForm.author_lastname.$pristine"
+							class="help-block">Nazwisko jest wymagane!</p>
+					</div>
+					<button ng-disabled="authorForm.$invalid" ng-click="addAuthor(author)"
+						class="btn btn-default">Dodaj autora</button>
+				</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-warning" ng-click="$dismiss()">Zamknij okno</button>
+</div>
+</form>
+</div>
